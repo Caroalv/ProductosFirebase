@@ -1,0 +1,18 @@
+<ion-content class="ion-padding-top ion-text-center">
+
+
+  <ion-avatar>
+    <img [src]="user()?.image" />
+  </ion-avatar>
+
+
+  <ion-button class="photo-btn" (click)="takeImage()" mode="ios" size="small" shape="round">
+<ion-icon name="camera-outline"></ion-icon>
+  </ion-button>
+
+  <h2>{{user().name}}</h2>
+  <div>
+    Vendedor
+  </div>
+
+</ion-content>

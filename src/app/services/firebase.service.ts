@@ -13,9 +13,11 @@ import { getStorage, uploadString, ref, getDownloadURL, deleteObject } from "fir
 })
 export class FirebaseService {
 
-  constructor(private auth: AngularFireAuth, private firestore: AngularFirestore, utilsSvc: UtilsService, private storage: AngularFireStorage) {} // Inyecta AngularFireAuth en el constructor
+  auth= inject(AngularFireAuth);
+  firestore= inject(AngularFirestore);
+  utilsSvc = inject(UtilsService)
+  storage= inject(AngularFireStorage)
 
-utilsSvc = inject(UtilsService);
 
   //=================== Autenticación ======================
   getAuth(){

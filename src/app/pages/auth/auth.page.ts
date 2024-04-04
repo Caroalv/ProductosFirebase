@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
@@ -16,7 +16,8 @@ export class AuthPage implements OnInit {
     password: new FormControl('', [Validators.required])
   });
 
-  constructor(private firebaseSvc: FirebaseService, private utilsSvc: UtilsService) {} // Inyecta FirebaseService en el constructor
+firebaseSvc= inject(FirebaseService);
+utilsSvc= inject(UtilsService)
 
   ngOnInit() {}
 

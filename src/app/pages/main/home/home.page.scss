@@ -1,9 +1,14 @@
-.ion-card{
-    gap: 100px;
-    padding: 20px 0;
-    border-radius: 15px;   
-}
-
-.ion-content{
+.ion-card {
+    gap: 20px; /* Espacio entre elementos dentro de la tarjeta */
+    padding: 20px; /* Espacio interno de la tarjeta */
+    border-radius: 15px;
+  }
+  
+  .card-content {
+    margin-top: 20px; /* Margen superior para separar el contenido de la tarjeta */
+  }
+  
+  .ion-content {
     --padding-bottom: 70px;
-}
+  }
+  

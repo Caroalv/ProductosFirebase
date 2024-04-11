@@ -5,6 +5,12 @@
   <ion-refresher-content></ion-refresher-content>
 </ion-refresher>
 
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button color="dark" (click)="generatePDF()">
+    <ion-icon class="pdf-icon" name="document"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 
 <ion-card mode="ios" color="secondary" class="d-flex-center ion-text-center ion-card" *ngIf="!loading && products.length">
   <div>
@@ -58,6 +64,9 @@
   </ion-item-sliding>
 </ion-list> 
 
+
+
+
 <!-- ================== Cargando ====================== -->
 <ion-list *ngIf="loading">
     <ion-item class="product-item" *ngFor="let p of [1,1,1,1,1,1,1,1,1,1,1,1,1]">
@@ -84,5 +93,9 @@
   </ion-fab-button>
 </ion-fab>
 
-
+<!-- ================== scroll ====================== -->
+<ion-infinite-scroll threshold="50%" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
 </ion-content>
